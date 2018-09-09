@@ -58,41 +58,41 @@ namespace DiseñoDeExperimentos
 
 
 
-            timeQuickSort(ordenadoNoD1);
-            timeQuickSort(ordenadoNoD2);
-            timeQuickSort(ordenadoNoD3);
-            timeQuickSort(ordenadoNoD4);
-            timeQuickSort(ordenadoNoD5);
+            //timeQuickSort(ordenadoNoD1);
+            //timeQuickSort(ordenadoNoD2);
+            //timeQuickSort(ordenadoNoD3);
+             timeQuickSort(ordenadoNoD4);
+            //timeQuickSort(ordenadoNoD5);
 
-            timeQuickSort(ordenadoNoA1);
-            timeQuickSort(ordenadoNoA2);
-            timeQuickSort(ordenadoNoA3);
-            timeQuickSort(ordenadoNoA4);
-            timeQuickSort(ordenadoNoA5);
-
-
-            timeQuickSort(aleatorio1);
-            timeQuickSort(aleatorio2);
-            timeQuickSort(aleatorio4);
-            timeQuickSort(aleatorio5);
+            //timeQuickSort(ordenadoNoA1);
+            //timeQuickSort(ordenadoNoA2);
+            //timeQuickSort(ordenadoNoA3);
+            //timeQuickSort(ordenadoNoA4);
+            //timeQuickSort(ordenadoNoA5);
 
 
-            timeRandomizeQS(ordenadoNoD2);
-            timeRandomizeQS(ordenadoNoD3);
-            timeRandomizeQS(ordenadoNoD4);
-            timeRandomizeQS(ordenadoNoD5);
+            //timeQuickSort(aleatorio1);
+            //timeQuickSort(aleatorio2);
+            //timeQuickSort(aleatorio4);
+            //timeQuickSort(aleatorio5);
 
-            timeRandomizeQS(ordenadoNoA1);
-            timeRandomizeQS(ordenadoNoA2);
-            timeRandomizeQS(ordenadoNoA3);
-            timeRandomizeQS(ordenadoNoA4);
-            timeRandomizeQS(ordenadoNoA5);
+            //timeRandomizeQS(ordenadoNoD1);
+            //timeRandomizeQS(ordenadoNoD2);
+            //timeRandomizeQS(ordenadoNoD3);
+            //timeRandomizeQS(ordenadoNoD4);
+            //timeRandomizeQS(ordenadoNoD5);
+
+            //timeRandomizeQS(ordenadoNoA1);
+            //timeRandomizeQS(ordenadoNoA2);
+            //timeRandomizeQS(ordenadoNoA3);
+            //timeRandomizeQS(ordenadoNoA4);
+            //timeRandomizeQS(ordenadoNoA5);
 
 
-            timeRandomizeQS(aleatorio1);
-            timeRandomizeQS(aleatorio2);
-            timeRandomizeQS(aleatorio4);
-            timeRandomizeQS(aleatorio5);
+            //timeRandomizeQS(aleatorio1);
+            //timeRandomizeQS(aleatorio2);
+            //timeRandomizeQS(aleatorio4);
+            //timeRandomizeQS(aleatorio5);
 
 
 
@@ -168,12 +168,13 @@ namespace DiseñoDeExperimentos
         public static void timeQuickSort(int[] A)
         {
             String mensaje = "";
+            int[] temp = A;
             for (int i = 0; i < 1000; i++)
             {
                 Stopwatch t = Stopwatch.StartNew();
                 QuickSort(A, 0, A.Length - 1);
-                mensaje += t.Elapsed.Seconds + " ";
-                
+                mensaje += i + ". " + t.Elapsed.TotalMilliseconds + "\n";
+                A = temp;
             }
             Console.WriteLine(mensaje);
 
@@ -181,12 +182,13 @@ namespace DiseñoDeExperimentos
         public static void timeRandomizeQS(int[] A)
         {
             String mensaje = "";
-            for (int i = 0; i < 1000; i++)
+            int[] temp = A;
+            for (int i = 0; i < 1; i++)
             {
                 Stopwatch t = Stopwatch.StartNew();
                 RandomizeQS(A, 0, A.Length - 1);
-                mensaje += t.Elapsed.Seconds + " ";
-
+                mensaje += t.Elapsed.Milliseconds + " ";
+                A = temp;
             }
             Console.WriteLine(mensaje);
 
