@@ -10,17 +10,29 @@ namespace DiseñoDeExperimentos
     {
         static void Main(string[] args)
         {
+            int[] A = { 8, 3, 6, 4, 2, 5, 7, 1 };
+            QuickSort(A, A[0], A[A.Length - 1]);
+            String mensaje = "";
+            for (int x = 0; x < A.Length; x++)
+            {
+                mensaje += A[x] + " ";
 
+            }
+
+            Console.WriteLine(mensaje);
         }
 
 
         public static void QuickSort(int[] A, int p, int r)
         {
+           
             if (p < r)
             {
                 int q = Partition(A, p, r);
                 QuickSort(A, p, q - 1);
                 QuickSort(A, q + 1, r);
+              
+
             }
 
 
@@ -41,5 +53,27 @@ namespace DiseñoDeExperimentos
             }
             return i + 1;
         }
+
+        public static void RandomizeQS (int[] A, int p, int r)
+        {
+            if (p < r)
+            {
+                int q = RandParti(A, p, r);
+                RandomizeQS(A, p, q - 1);
+                RandomizeQS(A, q + 1, r);
+            }
+
+        }
+
+        public static int RandParti(int[] A, int p, int r)
+        {
+            Random n = new Random();
+            int i = n.Next(p, r);
+            int aux = A[r];
+            A[r] = A[i];
+            A[i] = aux;
+            return Partition(A, p, r);
+        }
+
     }
 }
