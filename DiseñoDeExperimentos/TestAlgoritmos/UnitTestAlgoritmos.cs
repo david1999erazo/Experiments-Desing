@@ -15,19 +15,10 @@ namespace TestAlgoritmos
         [TestMethod]
         public void TestQuickSortEntradaPequeña()
         {
-            //Preparación
-            int [] arregloP = entradaP;
-            Program relacion = new Program();
-
-
-            //Ejecución
-            relacion.QuickSort(arregloP,0,arregloP.Length-1);
-            
-             
-
+         
         }
 
-
+        
         [TestMethod]
         public void TestRandomizedQSEntradaPequeña()
         {
