@@ -198,5 +198,86 @@ namespace DiseñoDeExperimentos
 
         }
 
+        //--------------------------------------------------------------------------------------------
+        // Para probarlos en UnitTest
+
+        public void QuickSortP(int[] A, int p, int r)
+        {
+
+            if (p < r)
+            {
+                int q = Partition(A, p, r);
+                QuickSortP(A, p, q - 1);
+                QuickSortP(A, q + 1, r);
+            }
+
+
+        }
+
+        public void RandomizeQSP(int[] A, int p, int r)
+        {
+            if (p < r)
+            {
+                int q = RandPartiP(A, p, r);
+                RandomizeQSP(A, p, q - 1);
+                RandomizeQSP(A, q + 1, r);
+            }
+
+        }
+
+        public int RandPartiP(int[] A, int p, int r)
+        {
+            Random n = new Random();
+            int i = n.Next(p, r);
+            int aux = A[r];
+            A[r] = A[i];
+            A[i] = aux;
+            return PartitionP(A, p, r);
+        }
+
+
+        public int PartitionP(int[] A, int p, int r)
+        {
+            int x = A[r];
+            int temp;
+
+            int i = p;
+            for (int j = p; j < r; j++)
+            {
+                if (A[j] <= x)
+                {
+                    temp = A[j];
+                    A[j] = A[i];
+                    A[i] = temp;
+                    i++;
+                }
+            }
+
+            A[r] = A[i];
+            A[i] = x;
+            return i;
+        }
+
+        public bool estaOrdenado(int[] arreglo)
+        {
+            bool estaordenado = false;
+            for (int i = 0; i < arreglo.Length; i++)
+            {
+                for (int j = 1; j < arreglo.Length - 1; j++)
+                {
+                    if (arreglo[i] < arreglo[j])
+                    {
+                        estaordenado = true;
+                    }
+                }
+            }
+
+            return estaordenado;
+        }
+
+
+        //---------------------------------------------------------------------------------------------------------
+
+
     }
 }
