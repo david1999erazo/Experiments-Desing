@@ -231,7 +231,7 @@ namespace DiseñoDeExperimentos
         }
 
 
-        private int PartitionP(int[] A, int p, int r)
+        public int PartitionP(int[] A, int p, int r)
         {
             int x = A[r];
             int temp;
