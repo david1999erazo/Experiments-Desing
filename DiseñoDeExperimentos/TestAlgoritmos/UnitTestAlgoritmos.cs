@@ -132,32 +132,46 @@ namespace TestAlgoritmos
 
         }
 
-
+        //Entradas aleatorias
         [TestMethod]
         public void TestQuickSortEntradaAleatoria()
         {
 
             int[] arregloP = entradaA;
-            //relacion.QuickSortP(arregloP,0)
+            relacion.QuickSortP(arregloP, 0, arregloP.Length - 1);
+            bool ordenado = relacion.estaOrdenado(arregloP);
+            Assert.IsTrue(ordenado);
 
 
         }
 
         [TestMethod]
-        public void TestRandomizedQSEntradaAleatoria()
+        public void TestRandomizeQSEntradaAleatoria()
         {
+            int[] arregloP = entradaA;
+            relacion.RandomizeQSP(arregloP, 0, arregloP.Length - 1);
+            bool ordenado = relacion.estaOrdenado(arregloP);
+            Assert.IsTrue(ordenado);
 
         }
 
         [TestMethod]
         public void TestPartitionEntradaAleatoria()
         {
+            int[] arregloP = entradaA;
+            relacion.PartitionP(arregloP, 0, arregloP.Length - 1);
+            bool ordenado = relacion.estaOrdenado(arregloP);
+            Assert.IsTrue(ordenado);
 
         }
 
         [TestMethod]
         public void TestRandPartiEntradaAleatoria()
         {
+            int[] arregloP = entradaA;
+            relacion.RandPartiP(arregloP, 0, arregloP.Length - 1);
+            bool ordenado = relacion.estaOrdenado(arregloP);
+            Assert.IsTrue(ordenado);
 
         }
 
