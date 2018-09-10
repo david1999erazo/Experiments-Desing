@@ -61,7 +61,7 @@ namespace DiseñoDeExperimentos
             //timeQuickSort(ordenadoNoD1);
             //timeQuickSort(ordenadoNoD2);
             //timeQuickSort(ordenadoNoD3);
-             timeQuickSort(ordenadoNoD4);
+            timeQuickSort(ordenadoNoD4);
             //timeQuickSort(ordenadoNoD5);
 
             //timeQuickSort(ordenadoNoA1);
@@ -101,7 +101,7 @@ namespace DiseñoDeExperimentos
 
         public static void QuickSort(int[] A, int p, int r)
         {
-           
+
             if (p < r)
             {
                 int q = Partition(A, p, r);
@@ -139,7 +139,7 @@ namespace DiseñoDeExperimentos
             {
                 int q = RandParti(A, p, r);
                 RandomizeQS(A, p, q - 1);
-                RandomizeQS(A, q+1, r);
+                RandomizeQS(A, q + 1, r);
             }
 
         }
@@ -147,7 +147,7 @@ namespace DiseñoDeExperimentos
         public static int RandParti(int[] A, int p, int r)
         {
             Random n = new Random();
-            int i = n.Next(p,r);
+            int i = n.Next(p, r);
             int aux = A[r];
             A[r] = A[i];
             A[i] = aux;
@@ -253,6 +253,26 @@ namespace DiseñoDeExperimentos
             return i;
         }
 
+        public bool estaOrdenado(int [] arreglo)
+        {
+            bool estaordenado = false;
+            for (int i=0; i<arreglo.Length;i++)
+            {
+                for (int j = 1; j<arreglo.Length-1;j++)
+                {
+                    if (arreglo[i]<arreglo[j])
+                    {
+                        estaordenado = true;
+                    }
+                }
+            }
+
+            return estaordenado;
+        }
+
+
         //---------------------------------------------------------------------------------------------------------
+        
+
     }
 }
