@@ -353,6 +353,23 @@ namespace DiseñoDeExperimentos
             return estaordenado;
         }
 
+        public  int[] GeneradorArreglosP(int m)
+        {
+            int k = (int)Math.Pow(10, m);
+            int[] A = new int[k];
+            Random n = new Random();
+            int temp;
+            for (int i = 0; i < k; i++)
+            {
+                temp = n.Next(0, 100);
+                A[i] = temp;
+            }
+
+            return A;
+
+        }
+
+
 
         //---------------------------------------------------------------------------------------------------------
 
