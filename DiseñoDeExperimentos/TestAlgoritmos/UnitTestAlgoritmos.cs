@@ -80,7 +80,7 @@ namespace TestAlgoritmos
         {
 
 
-            int[] arregloP = relacion.GeneradorArreglosP(3);
+            int[] arregloP = relacion.GeneradorArreglosP(4);
             relacion.QuickSortP(arregloP, 0, arregloP.Length - 1);
 
             bool ordenado = relacion.estaOrdenado(arregloP);
@@ -93,7 +93,8 @@ namespace TestAlgoritmos
         public void TestRandomizedQSEntradaGrande()
         {
 
-            int[] arregloP = relacion.GeneradorArreglosP(3);
+            int[] arregloP = relacion.GeneradorArreglosP(4);
+            
             relacion.RandomizeQSP(arregloP, 0, arregloP.Length - 1);
 
             bool ordenado = relacion.estaOrdenado(arregloP);
@@ -106,7 +107,7 @@ namespace TestAlgoritmos
         public void TestPartitionEntradaGrande()
         {
 
-            int[] arregloP = relacion.GeneradorArreglosP(3);
+            int[] arregloP = relacion.GeneradorArreglosP(4);
             relacion.PartitionP(arregloP, 0, arregloP.Length - 1);
 
             bool ordenado = relacion.estaOrdenado(arregloP);
@@ -119,7 +120,7 @@ namespace TestAlgoritmos
         [TestMethod]
         public void TestRandPartiEntradaGrande()
         {
-            int[] arregloP = relacion.GeneradorArreglosP(3);
+            int[] arregloP = relacion.GeneradorArreglosP(4);
             relacion.RandPartiP(arregloP, 0, arregloP.Length - 1);
 
             bool ordenado = relacion.estaOrdenado(arregloP);
