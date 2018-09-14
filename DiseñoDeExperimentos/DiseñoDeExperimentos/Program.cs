@@ -13,7 +13,7 @@ namespace DiseñoDeExperimentos
         {
             //Para Arreglos de un tamaño menor a 10^4
             //QuickSort:
-            //timeQuickSortD3(1);    
+            //timeQuickSortD3(1);
             //timeQuickSortD3(2);
             //timeQuickSortD3(3);
             //RandomizeQS               Formato: 1.Aleatorio. milis 1.Ascendente milis 1.Descendente milis \n 2.Aleatorio. milis 2.Ascendente milis 2.Descendente milis
@@ -43,10 +43,8 @@ namespace DiseñoDeExperimentos
             //timeQuickSortDescendente(5);
             //RQS Descendente
             //timeRandomizeQSDescendente(4);
-            //timeRandomizeQSDescendente(5);
-
-
-
+            timeRandomizeQSDescendente(5);
+            Console.ReadLine();
 
         }
 
@@ -128,7 +126,7 @@ namespace DiseñoDeExperimentos
                 QuickSort(A, 0, A.Length - 1);
                 mensaje += i + ". " + t.Elapsed.TotalMilliseconds + "\n";
             }
-            
+            Console.WriteLine(mensaje);
 
         }
         public static void timeQuickSortDescendente(int pot)
@@ -170,9 +168,10 @@ namespace DiseñoDeExperimentos
                 A = GeneradorArreglos(pot);
                 Stopwatch t = Stopwatch.StartNew();
                 QuickSort(A, 0, A.Length - 1);
-                mensaje += i + ". " + t.Elapsed.TotalMilliseconds + "\n";
+                Console.WriteLine(i + ". " + t.Elapsed.TotalMilliseconds);
+                //mensaje += i + ". " + t.Elapsed.TotalMilliseconds + "\n";
             }
-            Console.WriteLine(mensaje);
+            //Console.WriteLine(mensaje);
 
         }
         public static void timeRandomizeQSDescendente(int pot)
@@ -185,9 +184,10 @@ namespace DiseñoDeExperimentos
                 A = A.OrderByDescending(b => b).ToArray();
                 Stopwatch t = Stopwatch.StartNew();
                 QuickSort(A, 0, A.Length - 1);
-                mensaje += i + ". " + t.Elapsed.TotalMilliseconds + "\n";
+                Console.WriteLine(i + ". " + t.Elapsed.TotalMilliseconds);
+                //mensaje += i + ". " + t.Elapsed.TotalMilliseconds + "\n";
             }
-            Console.WriteLine(mensaje);
+            //Console.WriteLine(mensaje);
 
         }
  
@@ -201,10 +201,10 @@ namespace DiseñoDeExperimentos
                 A = A.OrderBy(b => b).ToArray();
                 Stopwatch t = Stopwatch.StartNew();
                 QuickSort(A, 0, A.Length - 1);
-                mensaje += i + ". " + t.Elapsed.TotalMilliseconds + "\n";
+                Console.WriteLine(i + ". " + t.Elapsed.TotalMilliseconds);
+                //mensaje += i + ". " + t.Elapsed.TotalMilliseconds + "\n";
             }
-            Console.WriteLine(mensaje);
-
+            //Console.WriteLine(mensaje);
         }
         public static void timeQuickSortD3(int pot)
         {
@@ -248,7 +248,7 @@ namespace DiseñoDeExperimentos
                 A = A.Reverse().ToArray();
                 t = Stopwatch.StartNew();
                 RandomizeQS(A, 0, A.Length - 1);
-                mensaje += i + ".Descendente " + t.Elapsed.TotalMilliseconds + " ";
+                mensaje += i + ".Descendente " + t.Elapsed.TotalMilliseconds + "\n";
 
             }
             Console.WriteLine(mensaje);
